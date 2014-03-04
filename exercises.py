@@ -5,6 +5,12 @@ print "do I really have to start with 'Hello world?'"
 '''hey what about this thingy?'''
 
 #ex2.
+print "I could have code like this." # and the comment after is ignored.
+# You can also use a comment to " disable" or comment out a piece of code:
+#print this will not run
+print "this will run."
+
+#ex3.
 '''+ does addition
 - does subtraction
 / divison
@@ -24,9 +30,22 @@ print "now I will count the eggs:"
 print 3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6
 
 
-#ex3. skip
+#ex4. 
+cars = 100
+space_in_a_car = 4.0
+drivers = 30
+passengers = 90
+cars_not_driven = cars - drivers
+cars_driven = drivers
+carpool_capacity = cars_driven * space_in_a_car
+average_passengers_per_car = passengers / cars_driven
 
-#ex4. skip
+print "There are", cars, "cars available."
+print "There are only", drivers, "drivers available."
+print "There will be", cars_not_driven, "empty cars today."
+print "We can transport", carpool_capacity, "people today."
+print "We have", passengers, "to carpool today."
+print "We need to put about", average_passengers_per_car, "in each car."
 
 #ex5. 
 
@@ -207,6 +226,6 @@ print "how much do you pay for rent?",
 rent = int(raw_input())
 percent_rent = salary/rent
 print "so you pay %d percent of your income for rent." % percent_rent
-    
+## how can I escape '%' and why is the math wrong?
     
 #ex12
