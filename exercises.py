@@ -1,8 +1,8 @@
+'''
 #ex 1.
 print "do I really have to start with 'Hello world?'"
 # I want to skip to string formatting! :(
 # I"m going to skip ahead...
-'''hey what about this thingy?'''
 
 #ex2.
 print "I could have code like this." # and the comment after is ignored.
@@ -11,7 +11,7 @@ print "I could have code like this." # and the comment after is ignored.
 print "this will run."
 
 #ex3.
-'''+ does addition
++ does addition
 - does subtraction
 / divison
 % modulo!! determines the reaminder 
@@ -19,7 +19,7 @@ print "this will run."
 < less than
 > greater than
 <= less than or equal
->= greater than or equal'''
+>= greater than or equal
 
 print "I will now count my chickens:"
 
@@ -116,10 +116,10 @@ e = "a string with a right side."
 #print and join two strings 
 print w + e
 
-'''instances of string inside string:
+#instances of string inside string:
 line 78:2
 line 84:1
-line 86:1'''
+line 86:1
 
 #adding two strings joins them to be one longer string.
 
@@ -209,23 +209,61 @@ real_title = "wizard"
 print "my job title is costumer\\%r." % real_title
 
 #ex11.
-'''
+
 print "How olds are you?",
 age = raw_input()
 print "How tall are you?",
 height = raw_input()
 print "How much do you weigh?",
 weight = raw_input()
-'''
 
 print "So you're %r old, %r tall and %r heavy." % (
     age, height, weight)
 print "how much do you earn",
-salary = int(raw_input())
+salary = float(raw_input())
 print "how much do you pay for rent?",
-rent = int(raw_input())
+rent = float(raw_input())
 percent_rent = salary/rent
-print "so you pay %d percent of your income for rent." % percent_rent
-## how can I escape '%' and why is the math wrong?
+#print string with '%' as a character, escaping with %
+print "so you pay %f%% of your income for rent." % (rent / salary * 100)
+#print "so you pay {:.0%} percent of your income for rent.".format(rent / salary)	
+	
     
 #ex12
+
+age = raw_input("How old are you?")
+height = raw_input("How tall are you?")
+weight = raw_input('How much do you weigh?')
+
+print "So, you're %r old, %r tall and %r heavy." % (age, height, weight)
+'''
+#ex13
+from sys import argv
+'''
+script, first, second, third = argv
+
+print "The script is called:", script
+print 'Your first variable is:', first
+print 'your second variable is:', second
+print "Your third variable is:", third
+'''
+'''
+name, age, height, weight = argv
+
+print raw_input("your name:"), name
+print raw_input("your age:"), age
+print raw_input("your height:"), height
+print raw_input("your weight:"), weight
+'''
+
+print 'user-provided arguments:', argv[1:]
+
+name, age, height, weight = argv
+
+raw_input("your name:"), name
+raw_input("your age:"), age
+raw_input("your height:"), height
+raw_input("your weight:"), weight
+
+print argv
+
