@@ -236,25 +236,23 @@ height = raw_input("How tall are you?")
 weight = raw_input('How much do you weigh?')
 
 print "So, you're %r old, %r tall and %r heavy." % (age, height, weight)
-'''
+
 #ex13
 from sys import argv
-'''
+
 script, first, second, third = argv
 
 print "The script is called:", script
 print 'Your first variable is:', first
 print 'your second variable is:', second
 print "Your third variable is:", third
-'''
-'''
+
 name, age, height, weight = argv
 
 print raw_input("your name:"), name
 print raw_input("your age:"), age
 print raw_input("your height:"), height
 print raw_input("your weight:"), weight
-'''
 
 print 'user-provided arguments:', argv[1:]
 
@@ -266,4 +264,151 @@ raw_input("your height:"), height
 raw_input("your weight:"), weight
 
 print argv
+
+#ex14
+
+from sys import argv
+
+script, user_name = argv
+prompt = 'you entered'
+print "Hi %s, I'm the %s script." % (user_name, script)
+print "I'd like to ask you a few questions."
+print "Do you like me %s?" % user_name
+likes = raw_input(prompt)
+
+print "Where do you live %s" % user_name
+lives = raw_input(prompt)
+
+print "What kind of computer do you have?"
+computer =  raw_input(prompt)
+
+print """"
+Alright, so you said %r about liking me.
+You live in %r. Not sure where that is.
+And you have a %r computer. Nice.
+""" % (likes, lives, computer)
+
+#ex15
+
+#imports argv module
+from sys import argv
+#arg v is keeping track of two variables, which we will provide when we run on the command line
+script, filename = argv
+#setting variable to a function open which takes argument filename
+txt = open(filename)
+#print with formating 
+print "Here's your file %r:" % filename
+#here we actually print contents of file, by calling method read
+print txt.read()
+#reseting our variable to open file again without hardcoding
+
+print "Type the filename again:"
+file_again = raw_input("> ")
+
+txt_again = open(file_again)
+
+print txt_again.read()
+#why use argv here? maybe you could make a program that would provide arguments to argv instead of interfacing with prompts in real time?
+
+#ex16
+
+from sys import argv
+
+script, filename = argv
+
+print "We're going to erase %r." % filename
+print " If you don't want that, hit CTRL-C (^C)."
+print "If you do want that, hit RETURN."
+
+raw_input("?")
+
+print "opening the file..."
+target = open(filename, "w")
+
+print "Truncating the file. Goodbye!"
+target.truncate()
+
+print "Now I'm going to ask you for three lines."
+
+line1 = raw_input("line 1: ")
+line2 = raw_input("line 2: ")
+line3 = raw_input("line 3: ")
+
+print "I'm going to write these to the file."
+#cool writing it on one line: writing the strings on multiple lines
+target.write("%s \n %s \n %s" % (line1, line2, line2))
+
+
+target = open(filename,"r")
+
+f = open(filename)
+print f.read()
+
+print "And finally, we close it."
+target.close()
+
+#ex17
+from sys import argv
+from os.path import exists
+
+script, from_file, to_file = argv
+#printing what we plan to do later...
+print "Copying from %s to %s" % (from_file, to_file)
+#seting vafriables to easily call out functions
+in_file = open(from_file); indata = in_file.read()
+#calling in_file.read and getting data size in formating
+print "The input file is %d bytes long" % len(indata)
+#checks if file exists
+print "Does the output file exist? %r" % exists(to_file)
+#oppertunity to escape
+print "Ready, hit RETURN to continue, CTRL_C to abort."
+raw_input()
+#open file in write mode
+out_file = open(to_file, 'w')
+#data cached!
+out_file.write(indata)
+print "alright, all done."
+
+#data not writen to file until closed! write to file and close!
+out_file.close()
+in_file.close()
+
+#ex18.
+def print_two(arg1, arg2):
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+    
+def print_one(arg1):
+    print "arg1: %r" % arg1
+    
+def print_none():
+    print "I got nothing."
+    
+print_two("Zed", "Shaw")
+print_one("First!")
+print_none()
+'''
+#ex19
+def cheese_and_crackers(cheese_count, boxes_of_crackers):
+    print "You have %d cheeses!" % cheese_count
+    print "You have %d boxes of crackers!" % boxes_of_crackers
+    print "Man that's enough for a party!"
+    print "get a blanket.\n"
+    
+print "We can just give the function numbers directly:"
+cheese_and_crackers(20, 30)
+
+print "Or we can use variables from our script:"
+amount_of_cheese = 10
+amount_of_crackers = 50
+
+cheese_and_crackers(amount_of_cheese, amount_of_crackers)
+
+print "We can even do math inside too:"
+cheese_and_crackers(10 + 20, 5 + 6)
+
+print "And we can combine the two, variables and math:"
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+
+
+
 
