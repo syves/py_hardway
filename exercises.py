@@ -524,32 +524,32 @@ print "We can also do that this way:"
 print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
 '''
 #ex25
-
+#create funtion that takes 'stuff' a string and slits it into smaller stings (words) when split argument is supplied (' ') in this case, and returns an array of words.
 def break_words(stuff):
     words = stuff.split(' ')
     return words
-
+#kind of sorts alphabetically ? and returns an array of sorted words
 def sort_words(words):
     return sorted(words)
-    
+#prints the word at index zero and removes it from list-mutation!  
 def print_first_words(words):
     word = words.pop(0)
     print word
-    
+#prints word at last index and removes from list    
 def print_last_words(words):
     word = words.pop(-1)
     print word
-    
+#this one still confuses me......retuns array of new list, with items popped out    
 def sort_sentence(sentence): #continue here
-    word = break_words(sentence)
+    words = break_words(sentence)
     return sort_words(words)
-    
+#gets words from sentence with break words, and prints first and last word   
 def print_first_and_last(sentence):
-    words = break_sentence(sentence)
-    print_first_word(words)
-    print_last_word(words)
-    
+    words = break_words(sentence)
+    print_first_words(words)
+    print_last_words(words)
+#gets words from sort_sentence which is updated list and prints fisrt and last of this newer list  
 def print_first_and_last_sorted(sentence):
    words = sort_sentence(sentence)
-   print_first_word(words)
+   print_first_words(words)
    print_last_words(words)
