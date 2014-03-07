@@ -386,7 +386,7 @@ def print_none():
 print_two("Zed", "Shaw")
 print_one("First!")
 print_none()
-'''
+
 #ex19
 def cheese_and_crackers(cheese_count, boxes_of_crackers):
     print "You have %d cheeses!" % cheese_count
@@ -409,6 +409,147 @@ cheese_and_crackers(10 + 20, 5 + 6)
 print "And we can combine the two, variables and math:"
 cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
 
+#ex20
+from sys import argv
+
+script, input_file = argv
+#create a function that when called prints whole file
+def print_all(f):
+    print f.read()
+#create function when called returns to char index 0  
+def rewind(f):
+    f.seek(0)
+#create function that when called reads a line at linecount and prints it    
+def print_a_line(line_count, f):
+    print line_count, f.readline(),
+#opens our file
+current_file = open(input_file)
+
+print "First let's print the whole file:\n"
+#call to print function
+print_all(current_file)
+
+print "Now let's rewind, kind of like a tape."
+#call to rewind, of our file. 
+rewind(current_file)
+
+print "Let's print three lines:"
+#line count starts at one
+current_line = 1
+print_a_line(current_line, current_file)
+#incrementing line count resetting value of line count
+current_line += 1
+print_a_line(current_line, current_file)
+#''
+current_line += 1
+print_a_line(current_line, current_file)
 
 
+#ex21
+def add(a, b):
+    print "Adding %d + %d" % (a, b)
+    return a + b
 
+def subtract(a, b):
+    print "Subtracting %d - %d" % (a, b)
+    return a - b
+    
+def multiply (a, b):
+    print "Multiplying %d * %d" % (a, b)
+    return a * b
+    
+def divide(a, b):
+    print "dividing %d / %d" % (a, b)
+    return a / b
+    
+print "Let's do some math with functions!"
+
+age = add(30, 5)
+height = subtract(78, 4)
+weight = multiply(90, 2)
+iq = divide(100, 2)
+
+print "Age: %d, Height: %d, Weight: %d, IQ: %d" % (age, height, weight, iq)
+
+print "Here is a puzzle."
+
+what = add(age, (subtract(height, multiply(weight, divide(iq, 2)))))
+
+print "That becomes: ", what, "can you do it by hand?"
+
+#divide(add(a + b), c - d)= 24 + 34 / 100 - 1023
+
+vacation_spending = 10000
+spending_per_year = 48000
+years_i_will_live = 62
+
+money_needed = add(vacation_spending, multiply(spending_per_year, years_i_will_live))
+
+print "I need to earn: %d over the years" % money_needed
+
+#ex22 review code-done...only new ideas are argv, target, open
+#ex23 read code
+
+#ex24
+print "Let's practice everything."
+print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
+
+poem  = """
+\tThe lovely Wind
+with ;ogic so firmly planted
+cannot discern \n the needs of love
+nor comprehend passion from intuition
+and requires an explaination
+\n\t\twhere there is none.
+"""
+print "--------------"
+print poem
+print '--------------'
+
+five = 10 - 2 + 3 - 6
+print "This should be five: %s" % five
+
+def secret_formula(started):
+    jelly_beans = started * 500
+    jars = jelly_beans / 1000
+    crates = jars / 100
+    return jelly_beans, jars, crates
+    
+start_point = 10000
+beans, jars, crates = secret_formula(start_point)
+    
+start_point = start_point / 10
+
+print "We can also do that this way:"
+print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
+'''
+#ex25
+
+def break_words(stuff):
+    words = stuff.split(' ')
+    return words
+
+def sort_words(words):
+    return sorted(words)
+    
+def print_first_words(words):
+    word = words.pop(0)
+    print word
+    
+def print_last_words(words):
+    word = words.pop(-1)
+    print word
+    
+def sort_sentence(sentence): #continue here
+    word = break_words(sentence)
+    return sort_words(words)
+    
+def print_first_and_last(sentence):
+    words = break_sentence(sentence)
+    print_first_word(words)
+    print_last_word(words)
+    
+def print_first_and_last_sorted(sentence):
+   words = sort_sentence(sentence)
+   print_first_word(words)
+   print_last_words(words)
