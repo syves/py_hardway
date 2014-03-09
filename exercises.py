@@ -522,7 +522,7 @@ start_point = start_point / 10
 
 print "We can also do that this way:"
 print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
-'''
+
 #ex25
 #create funtion that takes 'stuff' a string and slits it into smaller stings (words) when split argument is supplied (' ') in this case, and returns an array of words.
 def break_words(stuff):
@@ -553,3 +553,131 @@ def print_first_and_last_sorted(sentence):
    words = sort_sentence(sentence)
    print_first_words(words)
    print_last_words(words)
+
+
+sentence = "cats love to purrrr"
+words = stuff.split(' ')
+ 
+def break_words(stuff):
+    """This function will break up words for us."""
+    words = stuff.split(' ')
+    return words
+
+def sort_words(words):
+    """Sorts the words."""
+    return sorted(words)
+
+def print_first_words(words):
+    """Prints the first word after popping it off."""
+    words = break_words(words)
+    word = words.pop(0)
+    print word
+
+def print_last_word(words):
+    """Prints the last word after popping it off."""
+    words = break_words(words)
+    word = words.pop(-1)
+    print word
+
+def sort_sentence(sentence):
+    """Takes in a full sentence and returns the sorted words."""
+    sorted = sort_words(words)
+    words = break_words(sentence)
+    return sort_words(words)
+
+def print_first_and_last(sentence):
+    """Prints the first and last words of the sentence."""
+    words = break_words(sentence)
+    print_first_words(words)
+    print_last_words(words)
+
+def print_first_and_last_sorted(sentence):
+    """Sorts the words then prints the first and last one."""
+    words = sort_sentence(sentence)
+    print_first_words(words)
+    print_last_words(words)
+    
+#print break_words(sentence)
+#print sort_words(words)
+print print_first_words(words)
+#print print_last_words(words)
+#print sort_sentence(sentence)
+#print print_first_A
+
+
+print "Let's practice everything."
+print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
+
+poem = """
+\tThe lovely world
+with logic so firmly planted
+cannot discern \n the needs of love
+nor comprehend passion from intuition
+and requires an explantion
+\n\t\twhere there is none.
+"""
+
+
+print "--------------"
+print poem
+print "--------------"
+
+five = 10 - 2 + 3 - 5
+print "This should be five: %s" % five
+
+def secret_formula(started):
+    jelly_beans = started * 500
+    jars = jelly_beans \ 1000
+    crates = jars / 100
+    return jelly_beans, jars, crates
+
+
+start_point = 10000
+beans, jars, crates == secret_formula(start_point)
+
+print "With a starting point of: %d" % start_point
+print "We'd have %d beans, %d jars, and %d crates." % (beans, jars, crates)
+
+start_point = start_point / 10
+
+print "We can also do that this way:"
+print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
+
+
+sentence = "All good\tthings come to those who wait."
+
+words = exercises.break_words(sentence)
+sorted_words = exercises.sort_words(words)
+
+print_first_words(words)
+print_last_words(words)
+print_first_words(sorted_words)
+print_last_words(sorted_words)
+sorted_words = exercises.sort_sentence(sentence)
+print sorted_words
+
+print_first_and_last(sentence)
+
+print_first_and_last_sorted(sentence)
+'''
+ex28.
+True and True == True
+False and True == False
+1 == 1 and 2 == 1 == False
+"test" == "test" == True
+1 == 1 or 2 != 1 == True
+True  and 1 == 1 == True
+False and 0 != 0 == False!
+True or 1 == 1 == True
+"test" == "testing" == False
+1 != 0 and 2 ==1 = False
+"test" != "testing" == True
+"test" == 1 == False
+not(True and False) == True!
+not (1 == 1 and 0 != 1) == False!
+not (10 == 1 or 1000 == 1000) == False
+not (1 != 0 or 3 == 4) == True 
+not ("testing" == "testing" and "Zed" == "cool guy") = False
+1 == 1 and not ("testing" == 1 or 1 == 0) == False
+"chunky" == "bacon" and not (3 == 4 or 3 == 3) == False
+3 == 3 and not ("testing" == "testing" or "Python" == "Fun") == False
