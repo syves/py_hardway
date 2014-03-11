@@ -915,16 +915,16 @@ print animals[5] #'platypus'
 print "The animal at 1.:"
 print animals[3] #'kangaroo'
 #assert animals[3] == 'kangaroo' test, will return nothing if test passes :)
-'''
+
 #ex35.
 from sys import exit
 
 def gold_room():
     print "This room is full of gold. How much should we take?"
     
-    next_ = raw_input("> ")
-    if '0' in next or "1" in next:
-        how_much = int(next)
+    next_ = raw_input("> Enter a number!\n")
+    if type(int(next_)) == int:
+        how_much = int(next_)
     else:
         dead("Man learn to type a number.")
         
@@ -937,20 +937,25 @@ def gold_room():
 def bear_room():
     print "There is a bear in here."
     print "The bear has a bunch of honey."
-    print "The fat bear is in fron of another door."
+    print "The fat bear is in front of another door."
     print "How are you going to move the bear?"
     bear_moved = False
     
+    print "Enter take honey or taunt bear"
+    
     while True:
-        next_ = raw_input("> ")
+        next_ = raw_input(">\n")
         
         if next_ == "take honey":
             dead("The bear looks at you the slaps your face off.")
         elif next_ == "taunt bear" and not bear_moved:
             print "The bear has moved from the door. You can go through it now."
             bear_moved = True
+            print "Enter open door."
+                        
         elif next_ == "taunt bear" and  bear_moved:
             dead("The bear gets pissed off and chews your legs off.")
+              
         elif next_ == "open door" and bear_moved:
             gold_room()
         else:
@@ -961,7 +966,7 @@ def cthulhu_room():
     print "He, it, whatever stares at you and you go insane."
     print "Do you flee for your life or eat your head?"
 
-    next_ = raw_input("> ")
+    next_ = raw_input(">Enter flee or head\n")
     
     if "flee" in next_:
         start()
@@ -969,9 +974,9 @@ def cthulhu_room():
         dead("Well that was tasty!")
     else:
         cthulhu_room()
-        
+#function prints specified string and exits game        
 def dead(why):
-    print why, "Good Job!"
+    print why, "You are dead. Game over!"
     exit(0)
     
 def start():
@@ -979,7 +984,7 @@ def start():
     print "There is a door to your right and left."
     print"Which one do you take?"
     
-    next_ = raw_input("> ")
+    next_ = raw_input("> Enter left or right\n")
     
     if next_ == "left":
         bear_room()
@@ -989,6 +994,84 @@ def start():
         dead("You stumble around the room until you starve.")
              
 start()
+'''
+#ex36.
+
+from sys import exit
+
+def go_sunbathing():
+    print "where shall I go sunbathing?."
+    print '''
+    1. golden gate park
+    2. union square
+    3. ocean beach'''
+            
+    next_ = raw_input("> Enter a number 1-3!\n")
+    
+    if next_ == "1" or next_ == "3":
+        print "You freeze to death."
+        game_over("Maybe they can unfreeze you in the future.")
+    
+    elif next_ == "2":
+        print "A Talent agent spots you, and you fly to Hollywood that day and become rich and famous!"
+        game_over("Your reality show is coming out soon!")
+       
+    else:
+        game_over("you didn't enter a number 1-3!")
+    
+
+def practice_code():
+    print "1. You practice your code for hours"
+    print "2. You practice your code for ten minutes and then spend the rest of the day watching downton Abbey."
+
+    next_ = raw_input("> Enter a number 1-2!\n")
+     
+    if next_ == "1":
+        print "You fall asleep and dream of a brilliant app idea."
+        print 'Do you build your app?'
+        
+        next_ = raw_input("> Enter yes or no!\n")
+        if next_ == "yes":
+            build_app = True
+            
+            if build_app:
+                print "You build your app and make a million dollars."
+                game_over("You buy an island where you can sunbath naked all year 'round'.")
+          
+        else:
+            game_over("You become a programmer and live a moderately happy life without a personal jet or private island.")
+        
+            
+    elif next_ == "2": 
+        game_over("You never learn to code well, and get a job in a pizza place. You become incredibly fat and never sunbath again.")
+            
+                
+def game_over(why):
+    print why, "Game over!"
+    exit(0)
+    
+def start():
+    print "You wake up."
+    print "What are you going to do today?."
+    print'''
+    1. Go sunbathing.
+    2. Practice your code.'''
+    
+    next_ = raw_input("> Enter numbers 1-2\n")
+    
+    if next_ == "1":
+        go_sunbathing()
+        
+    elif next_ == "2":
+        practice_code()
+          
+    else:
+        "You did not enter a number 1-2!"
+        exit(0)#try 1?
+             
+start()
+
+
 
 
 
