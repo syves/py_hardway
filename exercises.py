@@ -734,10 +734,10 @@ if people > buses:
     print "Alright, let's just take the buses."
 else:
     print "Fine, let's stay home then."
-'''
+
  
 #ex31.
-print "You enter a dark room with two doors. Do you go through door #1 or door #2?"
+print "You enter a dark room with three doors. Do you go through door #1 or door #2 or #3?"
 
 door = raw_input("> ")
 
@@ -745,6 +745,7 @@ if door ==  "1":
     print "There's a giant bear here eating a cheese cake. What do you do?"
     print "1. Take the cake."
     print "2. Scream at the bear."
+    print "3. Offer the bear a cofee"
     
     bear = raw_input("> ")
     
@@ -752,6 +753,8 @@ if door ==  "1":
         print "The bear eats your face off. Good job!"
     elif bear == "2":
         print "The bear eats your legs off. Good job!"
+    elif bear == "3":
+        print "The bear accepts your kind offer. and offers you some cake."
     else:
         print "Well, doing %s is probably better. Bear runs away." % bear
         
@@ -760,19 +763,144 @@ elif door == "2":
     print "1. Blueberries."
     print "2. Yellow jacket clothspins."
     print "3. Understanding revolvers yelling melodies."
+    print "4. blind Cthulu with the bear spray you still have, then cook him, yummy!"
     
     insanity = raw_input("> ")
     
     if insanity == "1" or insanity == "2":
         print "Your  body survives by a mind of jello. Good job!"
+    elif insanity == 4:
+        print "Time for a nap!"
     else:
         print "The insanity rots your eyes into a pool of muck. Good job!"
+        
+elif door == "3":
+    print "Penquins are dancing the charleston!"
+    print "1. You drop your bear spray and frying pan and join in!"
+    print "2. You teach them the electric slide!"
+    print "3. You run out of the room back into the dark hall."
+    
+    dance_party = raw_input("> ")
+    
+    if dance_party == "1" or dance_party == "2":
+        print "You are the life of the party. Good job!"
+    elif dance_party == "3":
+        print "You enter a dark room with three doors Again! Do you go through door #1 or door #2 or Man \t\tup and go back into #3?"
+        door = raw_input("> ")
+        if door ==  "1":
+            print "There's a giant bear here eating a cheese cake. What do you do?"
+            print "1. Take the cake."
+            print "2. Scream at the bear."
+            print "3. Offer the bear a cofee"
+    
+            bear = raw_input("> ")
+    
+            if bear == "1":
+                print "The bear eats your face off. Good job!"
+            elif bear == "2":
+                print "The bear eats your legs off. Good job!"
+            elif bear == "3":
+                print "The bear accepts your kind offer. and offers you some cake."
+            else:
+                print "Well, doing %s is probably better. Bear runs away." % bear
+        
+        elif door == "2":
+            print "You stare into the endless abyss at Cthulu's retina."
+            print "1. Blueberries."
+            print "2. Yellow jacket clothspins."
+            print "3. Understanding revolvers yelling melodies."
+            print "4. blind Cthulu with the bear spray you still have, then cook him, yummy!"
+    
+        insanity = raw_input("> ")
+    
+        if insanity == "1" or insanity == "2":
+            print "Your  body survives by a mind of jello. Good job!"
+        elif insanity == "4":
+            print "Time for a nap!"        
+        elif door == "3":
+            print "Penquins are dancing the charleston!"
+            print "1. You drop your bear spray and frying pan and join in!"
+            print "2. You teach them the electric slide!"
+            print "3. You run out of the room back into the dark hall."
+    
+        dance_party = raw_input("> ")
+    
+        if dance_party == "1" or dance_party == "2":
+            print "You are the life of the party. Good job!"
+        elif dance_party == "3":
+            print "You enter a dark room with three doors Again! Do you go through door #1 or door #2 or Man up  \t\tand go back into #3?"
+        else:
+            print "The insanity rots your eyes into a pool of muck. Good job!"
 
 else:
-    print "You stumble around and fall on a knife and die. Good job!" 
+        print "You stumble around and fall on a knife and die. Good job!" 
 
+#ex32.
+#the_count = [1, 2, 3, 4, 5]
+the_count = range(0, 6)
+fruits = ['apples', 'oranges', 'pears', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+
+for num in the_count:
+    print "This number is count %d" % num
     
+for fruit in fruits:
+    print "A fruit of type: %s" % fruit
     
+for i in change:
+    print "I got  %r" % i 
+    
+elements = range(0, 6)
+    
+for i in elements:
+    print "Element was: %d" % i
+    
+#ex.33
+
+numbers = []
+def less_than(n, j):
+  i = 0
+  while i < n:
+      print "At the top i is %d" % i
+      print "At the top j is %d" % j
+      numbers.append(i)
+    
+      i += j
+      print "Numbers now:", numbers
+      print "At the bottom i is %d" % i
+      print "At the bottom j is %d" % j
+    
+  print "The numbers: "
+
+  for num in numbers:
+     print num
+     
+print less_than(18, 2)
+
+numbers = []
+def less_than(n, j):
+  #i = 0
+  for num in range(0, n, j):
+      print "At the top num is %d" % num
+      numbers.append(num)
+      num += 1
+      
+      print "Numbers now:", numbers
+      print "At the bottom num is %d" % num
+    
+  print "The numbers: "
+
+  for num in numbers:
+      print num
+     
+print less_than(17, 3)
+
+'''
+#ex34.
+
+
+
+
 
 
     
