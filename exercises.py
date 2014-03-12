@@ -994,7 +994,7 @@ def start():
         dead("You stumble around the room until you starve.")
              
 start()
-'''
+
 #ex36.
 
 from sys import exit
@@ -1071,7 +1071,102 @@ def start():
              
 start()
 
-
+'''
+#ex37
+and : False and True = False
+del : del list[4]
+from : import  ...  from
+not : not(False)
+while : while (condition): \n do something
+as : excetion as 'foo'
+elif : if a: ...do something \n efif b: ....do somethinhg else
+global : a variable avaible on all levels
+or : True or False = True
+with :
+assert : assert b == b
+else : if a: ...., if b: ... else: ...do something else
+if : if condition:...do something
+pass
+yield
+break : breaks the loop
+except
+import : import modules or files
+print : prints results or string on command line
+class
+exec
+in : for num in numbers: ...do something
+raise : raise exception
+continue
+finally
+is
+return : tells code to run... return 'a' + 'b' \n 'ab'
+def : def some_function(variable): ...does some stuff
+for : for num in numbers: print num += 1
+lambda 
+try : try:...{}[2]
+True :
+False :
+None :
+strings : "helloe world"
+numbers : 1,2,3
+floats : 1.678
+lists : list = [4, "cat", []]
+\\
+\'
+\"
+\a
+\b
+\f
+\n
+\r
+\t
+\v
+%d
+%i
+%o
+%u
+%x
+%X
+%e
+%E
+%f
+%F
+%g
+%G
+%c
+%r
+%s
+%%
++
+-
+*
+**
+/
+//
+%
+<
+>
+<=
+>=
+==
+!=
+<>
+( )
+[ ]
+{ }
+@
+,
+:
+.
+=
+;
++=
+-=
+*=
+/=
+//=
+%=
+**=
 
 
 
