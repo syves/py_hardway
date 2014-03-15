@@ -1001,10 +1001,10 @@ from sys import exit
 
 def go_sunbathing():
     print "where shall I go sunbathing?."
-    print '''
+    print \'''
     1. golden gate park
     2. union square
-    3. ocean beach'''
+    3. ocean beach\'''
             
     next_ = raw_input("> Enter a number 1-3!\n")
     
@@ -1053,9 +1053,9 @@ def game_over(why):
 def start():
     print "You wake up."
     print "What are you going to do today?."
-    print'''
+    print\'''
     1. Go sunbathing.
-    2. Practice your code.'''
+    2. Practice your code.\'''
     
     next_ = raw_input("> Enter numbers 1-2\n")
     
@@ -1072,6 +1072,7 @@ def start():
 start()
 
 '''
+'''
 #ex37
 and : False and True = False
 del : del list[4]
@@ -1087,13 +1088,13 @@ assert : assert b == b
 else : if a: ...., if b: ... else: ...do something else
 if : if condition:...do something
 pass
-yield
+yield: used inside generator, freezes state
 break : breaks the loop
-except
+except: clause catches all exceptions, use Exeception, raise exceptions but dont catch unless you can do something about it.
 import : import modules or files
 print : prints results or string on command line
 class
-exec
+exec statement or function eval an expression, exec(expr, globals)
 in : for num in numbers: ...do something
 raise : raise exception
 continue
@@ -1104,9 +1105,9 @@ def : def some_function(variable): ...does some stuff
 for : for num in numbers: print num += 1
 lambda 
 try : try:...{}[2]
-True :
-False :
-None :
+True : condition is true, true or false, not 0, or neg int
+False : condition is not true, true and false, false and false, 0
+None : no value?
 strings : "helloe world"
 numbers : 1,2,3
 floats : 1.678
@@ -1167,7 +1168,18 @@ lists : list = [4, "cat", []]
 //=
 %=
 **=
-
+'''
 
 
     
+def simplegenerator():
+    num = 0
+    while True:
+        yield num
+        num += 1
+
+
+for num in simplegenerator():
+    print num
+    if num == 1000:
+        break
