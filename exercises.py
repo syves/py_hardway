@@ -1083,12 +1083,12 @@ as : excetion as 'foo'
 elif : if a: ...do something \n efif b: ....do somethinhg else
 global : a variable avaible on all levels
 or : True or False = True
-with :
+with : context manager ..with "do something..." will close file
 assert : assert b == b
 else : if a: ...., if b: ... else: ...do something else
 if : if condition:...do something
-pass
-yield: used inside generator, freezes state
+pass: a null opperation or placeholder
+yield: used return value inside generator
 break : breaks the loop
 except: clause catches all exceptions, use Exeception, raise exceptions but dont catch unless you can do something about it.
 import : import modules or files
@@ -1098,12 +1098,12 @@ exec statement or function eval an expression, exec(expr, globals)
 in : for num in numbers: ...do something
 raise : raise exception
 continue
-finally
-is
+finally: after try except, you can clean up or do some other task
+is: test for object identity, x is y..
 return : tells code to run... return 'a' + 'b' \n 'ab'
 def : def some_function(variable): ...does some stuff
 for : for num in numbers: print num += 1
-lambda 
+lambda : anon functions, function which takes functions, keeps it on one line
 try : try:...{}[2]
 True : condition is true, true or false, not 0, or neg int
 False : condition is not true, true and false, false and false, 0
@@ -1115,71 +1115,160 @@ lists : list = [4, "cat", []]
 \\
 \'
 \"
-\a
-\b
-\f
-\n
-\r
-\t
-\v
-%d
-%i
-%o
+\a:no effect??
+\b: deletes char its is next to print "the names\b" : the name
+\f: same as \v??
+\n: new line
+\r : does not print anything following \r. print "I am not sure what\r will do"  : will do sure what
+\t: tab
+\v: cool verticle tab
+%d: formats digits, base 10
+%i :
+/* - not sure about defined below?
+%o :octal format, base 8?
 %u
-%x
-%X
-%e
-%E
-%f
-%F
-%g
-%G
-%c
-%r
-%s
-%%
-+
--
-*
-**
-/
-//
-%
-<
->
-<=
->=
-==
-!=
-<>
-( )
-[ ]
-{ }
+%x: hex, base 16, lowercasen muns above 9
+%X: hex uppercase
+%e: exponent
+%E :same
+%f: fixed point number to precision 6
+%F: same
+%g : geneal format, rounds number
+%G: switches to e if num gets too big
+%c: converts int to char?
+*/
+%r : degugging mode formatter, placeholder
+%s :strings
+%% :escapes % "90%% of our students recieved A-"
++: add
+- :subtract
+* :multipy
+**: pow
+/ escape
+// escape escape
+% :modulo returns remainder
+< :less than
+>: greater than
+<= less than or equal
+>= greater than or equal
+== equal value
+!= not equal value
+<> : another form of not equal
+( ): encapsulate stuff that goes inside functiond ;variables
+[ ]: list formater, or braket notation get element of dict
+{ }: ecapsulates dict items
 @
-,
-:
+, 
+:end of function : denotes now do somthing
 .
-=
+= assings value
 ;
-+=
--=
-*=
++= adds value to itself n += 1, = n + 1.
+-= subtracts value from self
+*=  multiplies itself by variable n *= 1 == n * 1
 /=
 //=
 %=
 **=
-'''
 
-
+#ex 38.
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
+print "Wait there's not 10 things in that list, let's fix that."
+#call split method on string, splitting it with a specified char ex ' ' the space, great way to find word breaks. 
+stuff = ten_things.split(' ')
+more_stuff = ["Da", "Night", "Song", "Frisbee", "Corn", "Banana", "girl", "Boy"]
+#while legth of items in our new list is less than 10...
+while len(stuff) != 10:
+# we set a variable to be the value of method pop being called on a second  list. pop removes last item from list, that value is next_one
+    next_one = more_stuff.pop()
+    #print our variable
+    print "Adding:", next_one
+    #append adds our variable next_one to our first list stuff
+    stuff.append(next_one)
+    #we print a string with our new len of list 
+    print "There's %d items now." % len(stuff)
     
-def simplegenerator():
-    num = 0
-    while True:
-        yield num
-        num += 1
+print "There we go:", stuff
+
+print "Let's do some things with stuff."
+#print the first item of list
+print stuff[1]
+#print last item of list
+print stuff[-1]
+#print varibale to be added to list
+print stuff.pop()
+#join transforms or list items back into a single string
+print ' '.join(stuff)
+#joins items selected by slice starting at index 3 and up to but not including 5. 
+print '#'.join(stuff[3:5])
+'''
+#ex39
+#mapping of state to abbrev
+states = {
+    'Oregon': 'OR',
+    'florida': "FL",
+    'California': 'CA',
+    'New York': 'NY',
+    'Michigan': 'MI'
+}
+#map state to city
+cities = {
+    'CA': 'San Francisco',
+    'MI': 'Detroit',
+    'FL': 'Jacksonville'
+}
+#add city to state dict
+cities['NY'] = 'New York'
+cities['OR'] = 'Portland'
+
+#print ______________
+print '_' * 10
+#get and print cities of ny state
+print 'NY State has:', cities['NY']
+#get and print cities of OR state
+print 'OR State has:', cities['OR']
+
+print '_' * 10
+#get and print abbrev or %s state
+print "Michigan's abbreviation is:" states['Michigan']
+print "Florida's abbreviation is:" states['Florida']
+
+print '_' * 10
+#get and print cities and states
+print "Michigan has:", cities[states['Michigan']]
+print "Florida has:", cities[states['Florida']]
+
+print '_' * 10
+#get and print all states in states
+for state, abbrev in states.items():
+    print "%s is abbreviated %s" % (states, abbrev)
+    
+print '_' * 10
+#get and print all cities in cities
+for abbrev, city in cities.items():
+    print "%s has the city %s" % (abbrev, city)
+    
+print '_' * 10
+#get and print all states in states, and cities in cities
+for state, abbrev in states.items():
+#to get cities -->> dict[key] returns value!
+    print "%s state is abbreviated %s and has city%s" % (state, abbrev, 
+    cities[abbrev])
+    
+print '_' * 10
+#get an abbrev of state that might not be in dict...
+#get- another way to get stuff from dictionsaries that might not be there
+#get(key,default) where default returns what you get is value is not therre
+state = states.get('Texas', None)
+
+if not state:
+    print "Sorry, no Texas."
+    
+#get a city with a default value
+#sets long complex string to variable for easy use.
+#we try to get key: 'tx', and return string for default value, cool.
+city = cities.get('TX', 'Does Not Exist')
+print "The city for the state 'TX' is: %s" % city
 
 
-for num in simplegenerator():
-    print num
-    if num == 1000:
-        break
+
