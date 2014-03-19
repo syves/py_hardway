@@ -1201,12 +1201,12 @@ print stuff.pop()
 print ' '.join(stuff)
 #joins items selected by slice starting at index 3 and up to but not including 5. 
 print '#'.join(stuff[3:5])
-'''
+
 #ex39
 #mapping of state to abbrev
 states = {
     'Oregon': 'OR',
-    'florida': "FL",
+    'Florida': "FL",
     'California': 'CA',
     'New York': 'NY',
     'Michigan': 'MI'
@@ -1230,8 +1230,8 @@ print 'OR State has:', cities['OR']
 
 print '_' * 10
 #get and print abbrev or %s state
-print "Michigan's abbreviation is:" states['Michigan']
-print "Florida's abbreviation is:" states['Florida']
+print "Michigan's abbreviation is:", states['Michigan']
+print "Florida's abbreviation is:", states['Florida']
 
 print '_' * 10
 #get and print cities and states
@@ -1240,7 +1240,7 @@ print "Florida has:", cities[states['Florida']]
 
 print '_' * 10
 #get and print all states in states
-for state, abbrev in states.items():
+for states, abbrev in states.items():
     print "%s is abbreviated %s" % (states, abbrev)
     
 print '_' * 10
@@ -1252,7 +1252,7 @@ print '_' * 10
 #get and print all states in states, and cities in cities
 for state, abbrev in states.items():
 #to get cities -->> dict[key] returns value!
-    print "%s state is abbreviated %s and has city%s" % (state, abbrev, 
+    print "%s state is abbreviated %s and has city %s" % (state, abbrev, 
     cities[abbrev])
     
 print '_' * 10
@@ -1270,5 +1270,370 @@ if not state:
 city = cities.get('TX', 'Does Not Exist')
 print "The city for the state 'TX' is: %s" % city
 
+#ex40
+#a class is an outside wrapper or name for a new object type
+#has all object properties like methods
+class Song(object):
+#init called when you make an instance of class, an onject, with arguments self the object to be called, and any number of arguments
+    def __init__(self, lyrics, platinum=False):
+    #properties of the object
+        self.lyrics = lyrics
+        self.platinum = platinum
+    #this is a method on Song objects  
+    def sing_me_a_song(self):
+    #what the method does. prints lyrics
+        for line in self.lyrics:
+            print line
+#create Song object, setting argument           
+happy_bday = Song(["Happy birthday to you",
+                    "I don't want to get sued",
+                    "So I'll stop right there"])
+#create Song object, setting argument                    
+bulls_on_parade = Song(["They rally around the family",
+                        "With pockets full of shells"])
+#invoking method on song object                        
+happy_bday.sing_me_a_song()
+#invoking method on song object 
+bulls_on_parade.sing_me_a_song()
+#setting variable to pass to object
+bowie = ["ground control to major tom",
+        "eat your protien pills and put your helmet on"]
+#create Song object
+major_tom = Song(bowie)
+#invoking method on song object 
+major_tom.sing_me_a_song()
+
+#ex41
+ python oop_test.py
+class Drug(object):
+	def __init__(self, crime)
+> class drug has an init with param self and crime
+ANSWER:  class Drug has-a __init__ that takes self and crime parameters.
 
 
+class Authority(object):
+	def badge(self, company, degree)
+> class Authority has a function badge with args self, company and degree   
+ANSWER:  class Authority has-a function named badge that takes self and company, degree parameters.
+
+
+bubble.cow = 'desire'
+> obj bubble of class cow has a propety desire
+ANSWER:  From bubble get the cow attribute and set it to 'desire'.
+
+
+balance = Degree()
+>  balance 
+ANSWER:  Set balance to an instance of class Degree.
+
+
+comb.drum(border, aunt)
+> from comb set drum attributes to border and aunt
+ANSWER:  From comb get the drum function, and call it with parameters self, border, aunt.
+
+
+class Brick(Drain):
+> class brick has a drain param
+ANSWER:  Make a class named Brick that is-a Drain.
+
+
+airplane.cheese = 'attraction'
+> from airplane get cheese attribute and set to atrattion
+ANSWER:  From airplane get the cheese attribute and set it to 'attraction'.
+
+
+class Body(object):
+	def cast(self, cord)
+> class body has a cast function with parameters self and cord
+ANSWER:  class Body has-a function named cast that takes self and cord parameters.
+
+
+class Bone(Crime):
+> class Bone has a Crime param
+ANSWER:  Make a class named Bone that is-a Crime.
+
+
+church.addition(back)
+> from church call the addition function with back as arg
+ANSWER:  From church get the addition function, and call it with parameters self, back.
+
+
+class Brother(object):
+	def __init__(self, battle)
+> class Brother is an obj and has an init function with param self and battle
+ANSWER:  class Brother has-a __init__ that takes self and battle parameters.
+
+
+army = Argument()
+> instance of argument class set to army 
+ANSWER:  Set army to an instance of class Argument.
+
+
+discovery.apparel(bridge, business)
+> from discovery call apparel function with params self, bridge and buisness
+ANSWER:  From discovery get the apparel function, and call it with parameters self, bridge, business.
+
+
+dinner.cobweb = 'crown'
+> from dinner get cobweb attribute and set to 'crown'
+ANSWER:  From dinner get the cobweb attribute and set it to 'crown'.
+
+
+class Color(object):
+	def brick(self, copper)
+> class Color is-a object, has-a brick function with params self and copper
+ANSWER:  class Color has-a function named brick that takes self and copper parameters.
+
+
+class Cough(Duck):
+> class Cough is-a Duck 
+ANSWER:  Make a class named Cough that is-a Duck.
+
+
+copper = Drain()
+> set copper to instnace of 
+ANSWER:  Set copper to an instance of class Drain.
+
+
+class Advice(object):
+	def __init__(self, cave)
+> class Advice is-a obj, has-a init function with params self and cave
+ANSWER:  class Advice has-a __init__ that takes self and cave parameters.
+
+
+bell.coast = 'brake'
+> from bell get coast attribute and set to 'brake'
+ANSWER:  From bell get the coast attribute and set it to 'brake'.
+
+
+crown.coat(answer)
+> from crown get the coat function call with para, answer
+ANSWER:  From crown get the coat function, and call it with parameters self, answer.
+
+
+class Can(object):
+	def __init__(self, beggar)
+> class Can is-a obj, has-a init function that takes a self and begger parameters
+ANSWER:  class Can has-a __init__ that takes self and beggar parameters.
+
+
+distance = Blow()
+> set distance to instance of Blow 
+ANSWER:  Set distance to an instance of class Blow.
+
+
+class Church(object):
+	def drink(self, circle, advertisement)
+> class Church is-a obj, has-a drink function which takes self, circle and advertisment as params
+ANSWER:  class Church has-a function named drink that takes self and circle, advertisement parameters.
+
+
+class Chain(Bubble):
+> make a chain class, chain is-a bubble
+ANSWER:  Make a class named Chain that is-a Bubble.
+
+
+children.angle = 'crib'
+> from children get the angle attribute ans ser it to ;crib'
+ANSWER:  From children get the angle attribute and set it to 'crib'.
+
+
+class Drug(object):
+	def development(self, beam, account)
+> class Drug is-a obj, has-a dev funct which tkaes self, beam ans account as params
+ANSWER:  class Drug has-a function named development that takes self and beam, account parameters.
+
+
+class Apple(Cattle):
+> make a class apple, thast is-a Cattle
+ANSWER:  Make a class named Apple that is-a Cattle.
+
+
+account.chicken(bee)
+> from account get the chcicken function call it with param bee
+ANSWER:  From account get the chicken function, and call it with parameters self, bee.
+
+
+beginner = Discussion()
+> set beginner to instance of Discussion
+ANSWER:  Set beginner to an instance of class Discussion.
+
+
+class Dress(object):
+	def __init__(self, amount)
+> class dress has an init function that takes paramn self and amount
+ANSWER:  class Dress has-a __init__ that takes self and amount parameters.
+
+
+baseball.coal = 'base'
+> from baseball get th e coal attribute and set it to 'base'
+ANSWER:  From baseball get the coal attribute and set it to 'base'.
+
+
+blood.birth(bait, dress)
+> from blood get the birth function and call it with params self, bait and dress
+ANSWER:  From blood get the birth function, and call it with parameters self, bait, dress.
+
+
+class Believe(object):
+	def __init__(self, beam)
+> class Believe is-a obj, that has an init function that takes self and beam as params
+ANSWER:  class Believe has-a __init__ that takes self and beam parameters.
+
+
+chair = Beggar()
+> set chair to instance of 'Beggar'
+ANSWER:  Set chair to an instance of class Beggar.
+
+> python oop_test.py english
+From cause get the club attribute and set it to 'door'.
+> clause.club = 'door'
+ANSWER:  cause.club = 'door'
+
+
+Make a class named Bear that is-a Bell.
+> class Bear(Bell)
+ANSWER:  class Bear(Bell):
+
+
+Set desire to an instance of class Carriage.
+> desire = Carriage() 
+ANSWER:  desire = Carriage()
+
+
+class Company has-a __init__ that takes self and condition parameters.
+> class Company():
+ANSWER:  class Company(object):
+	def __init__(self, condition)
+
+
+class Argument has-a function named believe that takes self and body, carriage parameters.
+> class Argument():\n\tdef believe(body, carriage)
+ANSWER:  class Argument(object):
+	def believe(self, body, carriage)
+
+
+From chance get the ant function, and call it with parameters self, boat, competition, balance.
+> chance.ant(boat, competion, balance)
+ANSWER:  chance.ant(boat, competition, balance)
+
+
+Make a class named Brass that is-a Chicken.
+> class brass(Chicken):
+ANSWER:  class Brass(Chicken):
+
+
+From cry get the coal attribute and set it to 'balloon'.
+> cry.coal = 'ballon'
+ANSWER:  cry.coal = 'balloon'
+
+
+Set cook to an instance of class Cheese.
+> cook = Cheese()
+ANSWER:  cook = Cheese()
+
+
+From cover get the cakes function, and call it with parameters self, doll, boat, body.
+> cover.cakes(self, doll, boat, body)
+ANSWER:  cover.cakes(doll, boat, body)
+
+
+class Deer has-a __init__ that takes self and cap parameters.
+> class Deer(object):def __init__(self, cap)
+ANSWER:  class Deer(object):
+	def __init__(self, cap)
+
+
+class Cork has-a function named ball that takes self and distribution, cloth parameters.
+> class Cork(object):
+ANSWER:  class Cork(object):
+	def ball(self, distribution, cloth)
+
+
+Set detail to an instance of class Coat.
+> detail = Coat()
+ANSWER:  detail = Coat()
+
+'''
+#ex42.
+
+class Animal(object):
+    pass
+    def __init__(self, name):
+        self.name = name
+    def eats(self, animal):
+        print "Animal: %r, eats animal: %r" % (self.name, animal.name)
+        
+class Dog(Animal):
+
+    def __init__(self, name):
+        self.name = name
+
+    def eats(self, animal):
+        if type(animal) != Cat:
+            raise TypeError('Dogs can only eat cats')
+        else:
+            super(Dog, self).eats(animal)
+
+class Cat(Animal):
+    
+    def __init__(self, name):
+        self.name = name
+    def meow(self):
+        print "%r says meow" % self.name
+    def eats(self, animal):
+        if type(animal) != Fish:
+            raise TypeError('Cats can only eat Fish')
+        else:
+            super(Cat, self).eats(animal)
+        
+class Person(object):
+
+    def __init__(self, name, pet):
+        self.name = name
+        self.pet = pet
+        
+    def eats(self, animal):
+        print "Person: %r, eats animal: %r" % (self.name, animal.name)
+
+        
+class Employee(Person):
+    
+    def __init__(self, name, salary, pet):
+        super(Employee, self).__init__(name, pet)
+    
+        self.salary = salary
+        
+class Fish(Animal):
+    def __init__(self, name):
+        Animal.__init__(self, name)
+        self.name = name
+    def eats(self, animal):
+        if type(animal) != Person:
+            raise TypeError('Fish can only eat people')
+        else:
+            super(Fish, self).eats(animal)
+
+    
+class Salmon(Fish):
+    pass
+    
+class Halibut(Fish):
+    pass
+    
+rover = Dog('rover')
+satan = Cat('satan')
+mary = Person('mary','satan')
+mary.pet = satan
+frank = Employee('frank', 120000, 'rover')
+frank.pet = rover
+flipper = Fish('flipper')
+crouse = Salmon('crouse')
+harry = Halibut('harry')
+
+rover.eats(satan)
+satan.eats(flipper)
+crouse.eats(mary)
+mary.eats(rover)
+
+mary.pet.meow()
