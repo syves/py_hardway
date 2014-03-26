@@ -1654,7 +1654,7 @@ b = B()
 #b calls its own g function whuch returns 'B'
 print a.f(), b.f()
 print a.g(), b.g()
-'''
+
 
 #ex43.
 from sys import exit
@@ -1710,7 +1710,7 @@ class CentralCorridor(Scene):
         print "flowing around his hate filled body.  He's blocking the door to the"
         print "Armory and about to pull a weapon to blast you."
 
-        action = raw_input("enter Shoot!, dodge! or tell a joke"\n)
+        action = raw_input("enter Shoot!, dodge! or tell a joke")
 
         if action == "shoot!":
             print "Quick on the draw you yank out your blaster and fire it at the Gothon."
@@ -1865,4 +1865,126 @@ class Map(object):
 a_map = Map('central_corrodor')
 a_game = Engine(a_map)
 a_game.play()
+
+'''
+#ex44.
+'''
+class Parent(object):
+
+    def implicit(self):
+        print "PARENT implicit()"
+
+class Child(Parent):
+    pass
+
+dad = Parent()
+son = Child()
+
+dad.implicit()
+son.implicit()
+
+class Parent(object):
+
+    def override(self):
+        print "PARENT override()"
+
+class Child(Parent):
+
+    def override(self):
+        print "CHILD override()"
+
+dad = Parent()
+son = Child()
+
+dad.override()
+son.override()
+
+class Parent(object):
+
+    def altered(self):
+        print "PARENT altered()"
+
+class Child(Parent):
+
+    def altered(self):
+        print "CHILD, BEFORE PARENT altered()"
+        super(Child, self).altered()
+        print "CHILD, AFTER PARENT altered()"
+
+dad = Parent()
+son = Child()
+
+dad.altered()
+son.altered()
+
+class Parent(object):
+#why does this class exist only so child can overwrite it? 
+    def override(self):
+        print "PARENT override()"
+#normal attrs of class, will get passed to child
+    def implicit(self):
+        print "PARENT implicit()"
+#use parent and child attributes in the order i specify
+    def altered(self):
+        print "PARENT altered()"
+
+class Child(Parent):
+#overrides parent function of same name
+    def override(self):
+        print "CHILD override()"
+#another kind of override, that can be called before or after parent function is called by child
+    def altered(self):
+        print "CHILD, BEFORE PARENT altered()"
+        super(Child, self).altered()
+        print "CHILD, AFTER PARENT altered()"
+
+dad = Parent()
+son = Child()
+
+dad.implicit() #parent implicit
+son.implicit() #parent implicict
+
+dad.override() #parrent override
+son.override() #child override
+
+dad.altered() #parent alt
+son.altered() #child, before parent alt(), parent alt(), child  aft parent alt()
+
+class Other(object):
+
+    def override(self):
+        print "OTHER override()"
+
+    def implicit(self):
+        print "OTHER implicit()"
+
+    def altered(self):
+        print "OTHER altered()"
+
+class Child(object):
+
+    def __init__(self):
+        self.other = Other()
+
+    def implicit(self):
+        self.other.implicit()
+
+    def override(self):
+        print "CHILD override()"
+
+    def altered(self):
+        print "CHILD, BEFORE OTHER altered()"
+        self.other.altered()
+        print "CHILD, AFTER OTHER altered()"
+
+son = Child()
+
+son.implicit() #other implicit
+son.override() #child override 
+son.altered() #child, other, child
+'''
+
+#ex45
+
+
 
